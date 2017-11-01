@@ -119,6 +119,7 @@
             this.buttonErase.TabIndex = 10;
             this.buttonErase.Text = "Clear File";
             this.buttonErase.UseVisualStyleBackColor = true;
+            this.buttonErase.Visible = false;
             this.buttonErase.Click += new System.EventHandler(this.buttonErase_Click);
             // 
             // Form1

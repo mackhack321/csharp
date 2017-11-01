@@ -18,3 +18,13 @@ G:\Desktop\Git\formAppTest\obj\Debug\formAppTest.csproj.GenerateResource.Cache
 G:\Desktop\Git\formAppTest\obj\Debug\formAppTest.csproj.CoreCompileInputs.cache
 G:\Desktop\Git\formAppTest\obj\Debug\formAppTest.exe
 G:\Desktop\Git\formAppTest\obj\Debug\formAppTest.pdb
+C:\Users\mlgpr\Desktop\Git\formAppTest\bin\Debug\formAppTest.exe.config
+C:\Users\mlgpr\Desktop\Git\formAppTest\bin\Debug\formAppTest.exe
+C:\Users\mlgpr\Desktop\Git\formAppTest\bin\Debug\formAppTest.pdb
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.csprojResolveAssemblyReference.cache
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.Form1.resources
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.Properties.Resources.resources
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.csproj.GenerateResource.Cache
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.csproj.CoreCompileInputs.cache
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.exe
+C:\Users\mlgpr\Desktop\Git\formAppTest\obj\Debug\formAppTest.pdb
