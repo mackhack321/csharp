@@ -17,7 +17,7 @@ namespace formAppTest
         {
             InitializeComponent();
         }
-
+   
         private void button1_Click(object sender, EventArgs e)
         {
             string getText = textBox1.Text;
@@ -28,23 +28,33 @@ namespace formAppTest
             }
             else
             {
-                buttonSave.Text = "Saved!";
-                var file = new SaveFileDialog();
-                file.ShowDialog();
-                var path = Path.GetFullPath(file.FileName);
-                StreamWriter sw = new StreamWriter(path,append: true);
-                var date = dateTimePicker1.Value;
-                if (checkIncludeDate.Checked)
+                try
                 {
-                    sw.WriteLine($"{getText} on {date}");
-                    sw.Close();
+                    var file = new SaveFileDialog();
+                    file.DefaultExt = "txt";
+                    file.Filter = "Text Files (*.txt)|*.txt";
+                    file.AddExtension = true;
+                    file.ShowDialog();
+                    var path = Path.GetFullPath(file.FileName);
+                    StreamWriter sw = new StreamWriter(path, append: true);
+                    var date = dateTimePicker1.Value;
+                    if (checkIncludeDate.Checked)
+                    {
+                        sw.WriteLine($"{getText} on {date}");
+                        sw.Close();
+                    }
+                    else
+                    {
+                        sw.WriteLine($"{getText}");
+                        sw.Close();
+                    }
+                    MessageBox.Show($"Input saved to {path}", "Save Notification");
                 }
-                else
+                catch (System.ArgumentException)
                 {
-                    sw.WriteLine($"{getText}");
-                    sw.Close();
+
                 }
-                MessageBox.Show($"Input saved to out.txt", "Save Notification");
+                
             }
         }
 
@@ -73,7 +83,10 @@ namespace formAppTest
         {
             try
             {
-                var file = new SaveFileDialog();
+                var file = new OpenFileDialog();
+                file.DefaultExt = "txt";
+                file.Filter = "Text Files (*.txt)|*.txt";
+                file.AddExtension = true;
                 file.ShowDialog();
                 try
                 {
@@ -95,12 +108,24 @@ namespace formAppTest
 
         private void buttonErase_Click(object sender, EventArgs e)
         {
-            StreamWriter sw = new StreamWriter("out.txt");
-            sw.Write(String.Empty);
-            sw.Close();
-            MessageBox.Show("File out.txt has been cleared", "Clear Notification");
-        }
+            var file = new OpenFileDialog();
+            file.DefaultExt = "txt";
+            file.Filter = "Text Files (*.txt)|*.txt";
+            file.AddExtension = true;
+            file.ShowDialog();
+            try
+            {
+                var path = Path.GetFullPath(file.FileName);
+                StreamWriter sw = new StreamWriter(path);
+                sw.Write(String.Empty);
+                sw.Close();
+                MessageBox.Show($"File {path} has been cleared", "Clear Notification");
+            }
+            catch (System.ArgumentException)
+            {
 
+            }   
+        }
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
