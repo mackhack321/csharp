@@ -38,6 +38,11 @@
             this.checkIncludeDate = new System.Windows.Forms.CheckBox();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonErase = new System.Windows.Forms.Button();
+            this.buttonPasswd = new System.Windows.Forms.Button();
+            this.textBoxPasswd = new System.Windows.Forms.TextBox();
+            this.buttonPasswdOk = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.buttonFontPick = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -49,8 +54,6 @@
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.button1_Click);
-            this.buttonSave.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.buttonSave.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // textBox1
             // 
@@ -60,7 +63,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(895, 328);
+            this.textBox1.Size = new System.Drawing.Size(886, 340);
             this.textBox1.TabIndex = 1;
             // 
             // dateTimePicker1
@@ -70,6 +73,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.MouseHover += new System.EventHandler(this.dateTimePicker1_MouseHover);
             // 
             // toolTip1
             // 
@@ -83,9 +87,9 @@
             // 
             // buttonColorPick
             // 
-            this.buttonColorPick.Location = new System.Drawing.Point(413, 350);
+            this.buttonColorPick.Location = new System.Drawing.Point(270, 379);
             this.buttonColorPick.Name = "buttonColorPick";
-            this.buttonColorPick.Size = new System.Drawing.Size(109, 23);
+            this.buttonColorPick.Size = new System.Drawing.Size(96, 23);
             this.buttonColorPick.TabIndex = 7;
             this.buttonColorPick.Text = "Text Color Picker";
             this.buttonColorPick.UseVisualStyleBackColor = true;
@@ -113,20 +117,63 @@
             // 
             // buttonErase
             // 
-            this.buttonErase.Location = new System.Drawing.Point(518, 379);
+            this.buttonErase.Location = new System.Drawing.Point(508, 379);
             this.buttonErase.Name = "buttonErase";
             this.buttonErase.Size = new System.Drawing.Size(75, 23);
             this.buttonErase.TabIndex = 10;
             this.buttonErase.Text = "Clear File";
             this.buttonErase.UseVisualStyleBackColor = true;
-            this.buttonErase.Visible = false;
             this.buttonErase.Click += new System.EventHandler(this.buttonErase_Click);
+            // 
+            // buttonPasswd
+            // 
+            this.buttonPasswd.Location = new System.Drawing.Point(638, 379);
+            this.buttonPasswd.Name = "buttonPasswd";
+            this.buttonPasswd.Size = new System.Drawing.Size(123, 23);
+            this.buttonPasswd.TabIndex = 11;
+            this.buttonPasswd.Text = "Enter Password";
+            this.buttonPasswd.UseVisualStyleBackColor = true;
+            this.buttonPasswd.Click += new System.EventHandler(this.buttonPasswd_Click);
+            // 
+            // textBoxPasswd
+            // 
+            this.textBoxPasswd.Location = new System.Drawing.Point(638, 411);
+            this.textBoxPasswd.Name = "textBoxPasswd";
+            this.textBoxPasswd.Size = new System.Drawing.Size(123, 20);
+            this.textBoxPasswd.TabIndex = 12;
+            this.textBoxPasswd.Visible = false;
+            this.textBoxPasswd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPasswd_KeyDown);
+            // 
+            // buttonPasswdOk
+            // 
+            this.buttonPasswdOk.Location = new System.Drawing.Point(767, 409);
+            this.buttonPasswdOk.Name = "buttonPasswdOk";
+            this.buttonPasswdOk.Size = new System.Drawing.Size(55, 23);
+            this.buttonPasswdOk.TabIndex = 13;
+            this.buttonPasswdOk.Text = "Ok";
+            this.buttonPasswdOk.UseVisualStyleBackColor = true;
+            this.buttonPasswdOk.Visible = false;
+            this.buttonPasswdOk.Click += new System.EventHandler(this.buttonPasswdOk_Click);
+            // 
+            // buttonFontPick
+            // 
+            this.buttonFontPick.Location = new System.Drawing.Point(270, 407);
+            this.buttonFontPick.Name = "buttonFontPick";
+            this.buttonFontPick.Size = new System.Drawing.Size(96, 23);
+            this.buttonFontPick.TabIndex = 14;
+            this.buttonFontPick.Text = "Text Font Picker";
+            this.buttonFontPick.UseVisualStyleBackColor = true;
+            this.buttonFontPick.Click += new System.EventHandler(this.buttonFontPick_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 504);
+            this.Controls.Add(this.buttonFontPick);
+            this.Controls.Add(this.buttonPasswdOk);
+            this.Controls.Add(this.textBoxPasswd);
+            this.Controls.Add(this.buttonPasswd);
             this.Controls.Add(this.buttonErase);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.checkIncludeDate);
@@ -152,6 +199,11 @@
         private System.Windows.Forms.CheckBox checkIncludeDate;
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.Button buttonErase;
+        private System.Windows.Forms.Button buttonPasswd;
+        private System.Windows.Forms.TextBox textBoxPasswd;
+        private System.Windows.Forms.Button buttonPasswdOk;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button buttonFontPick;
     }
 }
 

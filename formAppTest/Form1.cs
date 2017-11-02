@@ -37,11 +37,11 @@ namespace formAppTest
                     file.ShowDialog();
                     var path = Path.GetFullPath(file.FileName);
                     StreamWriter sw = new StreamWriter(path, append: true);
-                    var date = dateTimePicker1.Value;
+                    var date = dateTimePicker1.Value.Date;
                     if (checkIncludeDate.Checked)
                     {
                         sw.WriteLine($"{getText} on {date}");
-                        sw.Close();
+                        sw.Close();            
                     }
                     else
                     {
@@ -56,16 +56,6 @@ namespace formAppTest
                 }
                 
             }
-        }
-
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-            buttonSave.Text = "Click to save";
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            buttonSave.Text = "Save";
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -97,7 +87,7 @@ namespace formAppTest
                 }
                 catch (System.ArgumentException)
                 {
-
+                    
                 }  
             }
             catch (System.IO.FileNotFoundException)
@@ -134,6 +124,45 @@ namespace formAppTest
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(dateTimePicker1, "Use this to add a date to your entry");
+        }
+
+        private void buttonPasswd_Click(object sender, EventArgs e)
+        {
+            textBoxPasswd.Visible = true;
+            buttonPasswdOk.Visible = true;
+            textBoxPasswd.MaxLength = 30;
+            textBoxPasswd.PasswordChar = '*';
+
+        }
+
+        private void checkPasswd()
+        {
+            var passwd = textBoxPasswd.Text;
+            if (passwd == "password")
+            {
+                MessageBox.Show("Password is good", "Confirmation");
+            }
+        }
+
+        private void buttonPasswdOk_Click(object sender, EventArgs e)
+        {
+            checkPasswd();
+        }
+
+        private void textBoxPasswd_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPasswd();
+        }
+
+        private void buttonFontPick_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            textBox1.Font = fontDialog1.Font;
         }
     }
 }
