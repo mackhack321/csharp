@@ -145,7 +145,11 @@ namespace formAppTest
             var passwd = textBoxPasswd.Text;
             if (passwd == "password")
             {
-                MessageBox.Show("Password is good", "Confirmation");
+                pictureBox1.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("You are not worthy", "Password Invalid");
             }
         }
 
@@ -154,15 +158,18 @@ namespace formAppTest
             checkPasswd();
         }
 
-        private void textBoxPasswd_KeyDown(object sender, KeyEventArgs e)
-        {
-            checkPasswd();
-        }
-
         private void buttonFontPick_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
             textBox1.Font = fontDialog1.Font;
+        }
+
+        private void textBoxPasswd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                checkPasswd();
+            }
         }
     }
 }
