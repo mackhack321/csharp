@@ -146,6 +146,7 @@ namespace formAppTest
             if (passwd == "password")
             {
                 pictureBox1.Visible = true;
+                pictureBox1.BringToFront();
             }
             else
             {
@@ -170,6 +171,11 @@ namespace formAppTest
             {
                 checkPasswd();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Very interesting.", "Aaaaahhhhhh...");
         }
     }
 }

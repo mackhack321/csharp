@@ -179,13 +179,13 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 504);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonFontPick);
             this.Controls.Add(this.buttonPasswdOk);
             this.Controls.Add(this.textBoxPasswd);
@@ -197,6 +197,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Mack\'s App";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
