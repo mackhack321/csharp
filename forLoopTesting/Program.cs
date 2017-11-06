@@ -15,6 +15,11 @@ namespace forLoopTesting
             {
                 Console.WriteLine(i);               
             }
+            string[] strlist = new string[] { "foo", "bar", "apple" };
+            foreach (string i in strlist)
+            {
+                Console.WriteLine(i);
+            }
             Console.ReadLine();
         }
     }
