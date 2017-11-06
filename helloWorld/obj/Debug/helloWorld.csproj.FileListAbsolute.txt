@@ -1,7 +1,0 @@
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\obj\Debug\helloWorld.csprojResolveAssemblyReference.cache
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\obj\Debug\helloWorld.csproj.CoreCompileInputs.cache
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\bin\Debug\helloWorld.exe.config
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\bin\Debug\helloWorld.exe
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\bin\Debug\helloWorld.pdb
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\obj\Debug\helloWorld.exe
-C:\Users\mlgpr\Google Drive\Coding\C#\helloWorld\obj\Debug\helloWorld.pdb
