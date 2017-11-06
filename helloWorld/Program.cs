@@ -8,8 +8,11 @@ namespace helloWorld
 {
     class Program
     {
+        public static void FuncTest(string arg) => Console.WriteLine($"I was called, and the argument was {arg}!");
+
         static void Main(string[] args)
         {
+            FuncTest("apple");
             Console.WriteLine("Hello, world!");
             var input = Console.ReadLine();
             Console.WriteLine($"I got the input: {input}");
