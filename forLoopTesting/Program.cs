@@ -9,7 +9,7 @@ namespace forLoopTesting
 {
     class Program
     {
-        public static void funcTest(int i, int rang)
+        public static void funcTest(long i, long rang)
         {
             int p = 1;
             Stopwatch stopwatch = new Stopwatch();
@@ -24,24 +24,82 @@ namespace forLoopTesting
             Console.WriteLine($"That took {time}");
         }
 
-        static void Main(string[] args)
+        public static void bottles()
+        {
+            int bottleCount = 99;
+            while (bottleCount > 1)
+            {
+                Console.WriteLine($"{bottleCount} bottles of beer on the wall,");
+                Console.WriteLine($"{bottleCount} bottles of beer!");
+                Console.WriteLine($"Take one down, pass it around,");
+                bottleCount--;
+                Console.WriteLine($"{bottleCount} bottles of beer on the wall!");
+                Console.ReadLine();
+            }
+        }
+
+        public static void forTesting()
         {
             int[] list = new int[] { 0, 1, 2, 3, 4 };
             foreach (int i in list)
             {
-                Console.WriteLine(i);               
+                Console.WriteLine(i);
             }
             string[] strlist = new string[] { "foo", "bar", "apple" };
             foreach (string i in strlist)
             {
                 Console.WriteLine(i);
             }
-            Console.Write("Give a number: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Give a range: ");
-            int rang = Convert.ToInt32(Console.ReadLine());
-            funcTest(num,rang);
-            Console.ReadLine();
+        }
+
+        public static void launcher()
+        {
+            Console.WriteLine("Raise x to the power of y -- 1");
+            Console.WriteLine("Bottles -- 2");
+            Console.WriteLine("For Loop Testing -- 3");
+            Console.WriteLine("Exit -- 4");
+            Console.Write("Select a function: ");
+            string choice = Console.ReadLine();
+            if (choice is "1")
+            {
+                try
+                {
+                    Console.Write("Give a number: ");
+                    long num = Convert.ToInt64(Console.ReadLine());
+                    Console.Write("Give a range: ");
+                    long rang = Convert.ToInt64(Console.ReadLine());
+                    funcTest(num, rang);
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("Invalid input received!");
+                }
+            }
+            else if (choice is "2")
+            {
+                bottles();
+            }
+            else if (choice is "3")
+            {
+                forTesting();
+            }
+            else if (choice is "4")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Invalid option!");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                launcher();
+                Console.WriteLine("");
+            }           
         }
     }
 }
