@@ -52,12 +52,23 @@ namespace forLoopTesting
             }
         }
 
+        public static void chaos()
+        {
+            double x = .3;
+            foreach (int i in Enumerable.Range(1, 1000000000))
+            {
+                x = 3.9 * x * (1 - x);
+                Console.WriteLine(x);
+            }
+        }
+
         public static void launcher()
         {
             Console.WriteLine("Raise x to the power of y -- 1");
             Console.WriteLine("Bottles -- 2");
-            Console.WriteLine("For Loop Testing -- 3");
-            Console.WriteLine("Exit -- 4");
+            Console.WriteLine("For Loop Testing -- 3");         
+            Console.WriteLine("Chaos -- 4");
+            Console.WriteLine("Exit -- 5");
             Console.Write("Select a function: ");
             string choice = Console.ReadLine();
             if (choice is "1")
@@ -84,6 +95,10 @@ namespace forLoopTesting
                 forTesting();
             }
             else if (choice is "4")
+            {
+                chaos();
+            }
+            else if (choice is "5")
             {
                 Environment.Exit(0);
             }
