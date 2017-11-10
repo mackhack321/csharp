@@ -66,48 +66,41 @@ namespace forLoopTesting
         {
             Console.WriteLine("Raise x to the power of y -- 1");
             Console.WriteLine("Bottles -- 2");
-            Console.WriteLine("For Loop Testing -- 3");         
+            Console.WriteLine("For Loop Testing -- 3");
             Console.WriteLine("Chaos -- 4");
             Console.WriteLine("Exit -- 5");
             Console.Write("Select a function: ");
             string choice = Console.ReadLine();
-            if (choice is "1")
+            switch (choice)
             {
-                try
-                {
-                    Console.Write("Give a number: ");
-                    long num = Convert.ToInt64(Console.ReadLine());
-                    Console.Write("Give a range: ");
-                    long rang = Convert.ToInt64(Console.ReadLine());
-                    funcTest(num, rang);
-                }
-                catch (System.FormatException)
-                {
-                    Console.WriteLine("Invalid input received!");
-                }
-            }
-            else if (choice is "2")
-            {
-                bottles();
-            }
-            else if (choice is "3")
-            {
-                forTesting();
-            }
-            else if (choice is "4")
-            {
-                chaos();
-            }
-            else if (choice is "5")
-            {
-                Environment.Exit(0);
-            }
-            else
-            {
-                Console.WriteLine("Invalid option!");
+                case "1":
+                    try
+                    {
+                        Console.Write("Give a number: ");
+                        long num = Convert.ToInt64(Console.ReadLine());
+                        Console.Write("Give a range: ");
+                        long rang = Convert.ToInt64(Console.ReadLine());
+                        funcTest(num, rang);
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Input not in correct format");
+                    }
+                break;
+                case "2":
+                    bottles();
+                    break;
+                case "3":
+                    forTesting();
+                    break;
+                case "4":
+                    chaos();
+                    break;
+                case "5":
+                    Environment.Exit(0);
+                    break;
             }
         }
-
         static void Main(string[] args)
         {
             while (true)
