@@ -11,13 +11,15 @@ namespace movieLab
         static void Main(string[] args)
         {
             //set's up the dictionary to hold the movies
-            IDictionary<string, string> movies = new Dictionary<string, string>();
-            movies.Add("IT", "R");
-            movies.Add("Jaws", "PG");
-            movies.Add("The SpongeBob Movie: Sponge Out of Water", "PG");
-            movies.Add("Killer Joe", "NC-17");
-            movies.Add("The Lion King", "G");
-            movies.Add("Thor: Ragnarok", "PG-13");
+            IDictionary<string, string> movies = new Dictionary<string, string>
+            {
+                { "IT", "R" },
+                { "Jaws", "PG" },
+                { "The SpongeBob Movie: Sponge Out of Water", "PG" },
+                { "Killer Joe", "NC-17" },
+                { "The Lion King", "G" },
+                { "Thor: Ragnarok", "PG-13" }
+            };
             //makes a list of all movies in dictionary, assigns length to var amt
             List<string> keys = new List<string>(movies.Keys);
             int amt = keys.Count;
