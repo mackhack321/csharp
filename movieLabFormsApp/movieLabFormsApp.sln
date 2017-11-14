@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "movieLabFormsApp", "movieLabFormsApp.csproj", "{CA18D9D7-8C28-4931-BD57-EE4264D0B926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA18D9D7-8C28-4931-BD57-EE4264D0B926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA18D9D7-8C28-4931-BD57-EE4264D0B926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA18D9D7-8C28-4931-BD57-EE4264D0B926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA18D9D7-8C28-4931-BD57-EE4264D0B926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {965BAEFE-8BDD-41FB-8C7D-2A3CE5AD5AC9}
+	EndGlobalSection
+EndGlobal
