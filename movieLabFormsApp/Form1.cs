@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace movieLabFormsApp
@@ -20,23 +15,19 @@ namespace movieLabFormsApp
                 { "Killer Joe", "NC-17" },
                 { "The Lion King", "G" },
                 { "Thor: Ragnarok", "PG-13" },
+                { "WALL-E", "G" },
                 { "Madea's Family Reunion", "PG-13" },
+                { "Finding Nemo", "G" },
                 { "Ace Ventura: Pet Detective", "PG-13" },
-                { "Deadpool", "R" }
+                { "Deadpool", "R" },
+                { "Wonder", "PG" },
+                { "Wonder Woman", "PG-13" },                
+                { "Monsters, Inc.", "G" }
             };
 
         public Form1()
         {
             InitializeComponent();
-            ageDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
-            foreach (string i in movies.Keys)
-            {
-                listBoxMovies.Items.Add(i);
-            }
-            foreach (int i in Enumerable.Range(1, 100))
-            {
-                ageDropdown.Items.Add(i);
-            }
         }
         
         private void run()
@@ -66,25 +57,44 @@ namespace movieLabFormsApp
             }
             catch
             {
-                if (listBoxMovies.SelectedIndex == -1)
+                if (listBoxMovies.SelectedIndex == -1 && ageDropdown.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a movie and your age", "Error");
+                }
+                else if (listBoxMovies.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please select a movie", "Error");
                 }
                 else if (ageDropdown.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please enter your age", "Error");
+                    MessageBox.Show("Please select your age", "Error");
                 }
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            labelRatingLetter.Text = movies[Convert.ToString(listBoxMovies.SelectedItem)];
+        {           
+            try
+            {
+                labelRatingLetter.Text = movies[Convert.ToString(listBoxMovies.SelectedItem)];
+            }
+            catch (KeyNotFoundException)
+            {
+                labelRatingLetter.Text = "";
+            }
         }
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ageDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
+            foreach (string i in movies.Keys)
+            {
+                listBoxMovies.Items.Add(i);
+            }
+            foreach (int i in Enumerable.Range(1, 100))
+            {
+                ageDropdown.Items.Add(i);
+            }
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -100,14 +110,6 @@ namespace movieLabFormsApp
         private void listBoxMovies_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             run();
-        }
-
-        private void listBoxMovies_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData is Keys.Return)
-            {
-                run();
-            }
         }
     }
 }

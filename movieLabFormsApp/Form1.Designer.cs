@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBoxMovies = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.listBoxMovies.Size = new System.Drawing.Size(260, 108);
             this.listBoxMovies.TabIndex = 0;
             this.listBoxMovies.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            this.listBoxMovies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxMovies_KeyDown);
             this.listBoxMovies.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxMovies_MouseDoubleClick);
             // 
             // label1
@@ -55,18 +55,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(101, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Select a Movie";
+            this.label1.Text = "Select a Film";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(99, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Enter your Age";
+            this.label2.Text = "Select your Age";
             // 
             // buttonSubmit
             // 
@@ -88,6 +88,7 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonExit.Location = new System.Drawing.Point(104, 226);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
@@ -115,8 +116,10 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.buttonSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.labelRatingLetter);
             this.Controls.Add(this.labelRating);
@@ -126,6 +129,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxMovies);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Fandanko";
             this.Load += new System.EventHandler(this.Form1_Load);
