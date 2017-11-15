@@ -62,6 +62,7 @@ namespace movieLabFormsApp
                 {
                     MessageBox.Show("Enjoy the film", $"This film is rated {usrRating}");
                 }
+
             }
             catch
             {
