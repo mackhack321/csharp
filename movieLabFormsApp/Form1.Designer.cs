@@ -47,6 +47,8 @@
             this.listBoxMovies.Size = new System.Drawing.Size(260, 108);
             this.listBoxMovies.TabIndex = 0;
             this.listBoxMovies.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxMovies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxMovies_KeyDown);
+            this.listBoxMovies.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxMovies_MouseDoubleClick);
             // 
             // label1
             // 

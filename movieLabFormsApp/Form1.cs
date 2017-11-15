@@ -95,5 +95,18 @@ namespace movieLabFormsApp
         {
             this.Close();
         }
+
+        private void listBoxMovies_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            run();
+        }
+
+        private void listBoxMovies_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData is Keys.Return)
+            {
+                run();
+            }
+        }
     }
 }
