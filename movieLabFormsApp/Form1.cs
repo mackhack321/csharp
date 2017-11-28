@@ -91,7 +91,7 @@ namespace movieLabFormsApp
             {
                 listBoxMovies.Items.Add(movies.ElementAt(index).Key);
             }
-            for (int i = 0; i < 101; i++)
+            for (int i = 1; i < 101; i++)
             {
                 ageDropdown.Items.Add(i);
             }
