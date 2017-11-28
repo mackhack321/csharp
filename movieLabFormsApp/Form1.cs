@@ -87,11 +87,11 @@ namespace movieLabFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             ageDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
-            foreach (string i in movies.Keys)
+            for (int index = 0; index < movies.Count; index++)
             {
-                listBoxMovies.Items.Add(i);
+                listBoxMovies.Items.Add(movies.ElementAt(index).Key);
             }
-            foreach (int i in Enumerable.Range(1, 100))
+            for (int i = 0; i < 101; i++)
             {
                 ageDropdown.Items.Add(i);
             }
