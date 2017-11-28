@@ -9,18 +9,19 @@ namespace doWhile
     class Program
     {
         static bool good = false;
+        static double num;
 
         public static void run()
         {
-            double num = -1;
-            Console.Write("Hey bud.  Give me a number between 1 and 100: ");
+            num = -1;            
             while (num < 1 || num > 100)
             {
-                num = double.Parse(Console.ReadLine());
-                good = true;
-                Console.WriteLine($"Your number is {num}.  Press enter to close...");
-                Console.ReadLine();
+                Console.Write("Hey bud.  Give me a number between 1 and 100: ");
+                num = double.Parse(Console.ReadLine());               
             }
+            good = true;
+            Console.WriteLine($"Your number is {num}.  Press enter to close...");
+            Console.Read();
         }
         static void Main(string[] args)
         {     
