@@ -46,6 +46,7 @@
             this.listBoxMovies.Location = new System.Drawing.Point(12, 25);
             this.listBoxMovies.Name = "listBoxMovies";
             this.listBoxMovies.Size = new System.Drawing.Size(260, 108);
+            this.listBoxMovies.Sorted = true;
             this.listBoxMovies.TabIndex = 0;
             this.listBoxMovies.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBoxMovies.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxMovies_MouseDoubleClick);
@@ -85,6 +86,7 @@
             this.ageDropdown.Name = "ageDropdown";
             this.ageDropdown.Size = new System.Drawing.Size(121, 21);
             this.ageDropdown.TabIndex = 4;
+            this.ageDropdown.SelectedIndexChanged += new System.EventHandler(this.ageDropdown_SelectedIndexChanged);
             // 
             // buttonExit
             // 

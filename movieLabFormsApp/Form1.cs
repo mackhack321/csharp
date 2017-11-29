@@ -41,10 +41,6 @@ namespace movieLabFormsApp
                 {
                     MessageBox.Show("You must be accompanied by a parent or guardian to watch this film", "This film is rated R");
                 }
-                else if (usrRating == "NC-17" && age < 18)
-                {
-                    MessageBox.Show("You are not permitted to watch this film", "This film is rated NC-17");
-                }
                 else if (usrRating == "PG-13" && age < 13)
                 {
                     MessageBox.Show("Parents are urged to be cautious of permitting their pre-teen to watch this film", "This film is rated PG-13");
@@ -110,6 +106,43 @@ namespace movieLabFormsApp
         private void listBoxMovies_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             run();
+        }
+
+        private void ageDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int age = int.Parse(ageDropdown.Text);
+            for (int index = 0; index < movies.Count; index++)
+            {
+                string rating = movies.ElementAt(index).Value;
+                if (rating is "R")
+                {
+                    if (age < 17)
+                    {
+                        listBoxMovies.Items.Remove(movies.ElementAt(index).Key);
+                    }
+                    else
+                    {
+                        if (!listBoxMovies.Items.Contains(movies.ElementAt(index).Key))
+                        {
+                            listBoxMovies.Items.Add(movies.ElementAt(index).Key);
+                        }
+                    }
+                }
+                if (rating is "NC-17")
+                {
+                    if (age < 17)
+                    {
+                        listBoxMovies.Items.Remove(movies.ElementAt(index).Key);
+                    }
+                    else
+                    {
+                        if (!listBoxMovies.Items.Contains(movies.ElementAt(index).Key))
+                        {
+                            listBoxMovies.Items.Add(movies.ElementAt(index).Key);
+                        }
+                    }
+                }
+            }
         }
     }
 }
