@@ -17,10 +17,6 @@ namespace greeneSquareQuiz
             {
                 Console.Write("Input a number or type 'done': ");
                 usrInput = Console.ReadLine();
-                if (usrInput is "done")
-                {
-                    break;
-                }
                 try
                 {
                     list.Add(double.Parse(usrInput));
