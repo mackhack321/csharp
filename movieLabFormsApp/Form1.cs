@@ -27,7 +27,7 @@ namespace movieLabFormsApp
 
         public static int getIndex(string movieName)
         {
-            for (int i = 0; i < movies.Length; i++)
+            for (int i = 0; i < movies.GetLength(0); i++)
             {
                 if (movies[i, 0] == movieName) { return i; }
             }
@@ -92,16 +92,9 @@ namespace movieLabFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             ageDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
-            for (int index = 0; index < movies.Length; index++)
+            for (int index = 0; index < movies.GetLength(0); index++)
             {
-                try
-                {
-                    listBoxMovies.Items.Add(movies[index, 0]);
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    continue;
-                }
+                   listBoxMovies.Items.Add(movies[index, 0]);
             }
             for (int i = 1; i < 101; i++)
             {
@@ -127,9 +120,9 @@ namespace movieLabFormsApp
         private void ageDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             int age = int.Parse(ageDropdown.Text);
-            for (int index = 0; index < movies.Length; index++)
+            for (int index = 0; index < movies.GetLength(0); index++)
             {
-                string rating = movies[getIndex(listBoxMovies.SelectedItem.ToString()), 1];
+                string rating = movies[index, 1];
                 
                 if (rating is "R")
                 {
@@ -139,7 +132,7 @@ namespace movieLabFormsApp
                     }
                     else
                     {
-                        if (!listBoxMovies.Items.Contains(movies[index, 0]));
+                        if (!listBoxMovies.Items.Contains(movies[index, 0]))
                         {
                             listBoxMovies.Items.Add(movies[index, 0]);
                         }
