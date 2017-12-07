@@ -7,6 +7,7 @@ namespace movieLabFormsApp
 {
     public partial class Form1 : Form
     {
+        /*
         IDictionary<string, string> movies = new Dictionary<string, string>
             {
                 { "IT", "R" },
@@ -24,6 +25,34 @@ namespace movieLabFormsApp
                 { "Wonder Woman", "PG-13" },                
                 { "Monsters, Inc.", "G" }
             };
+        */
+
+        static string[,] movies =
+            {
+                { "IT", "R" },
+                { "Jaws", "PG" },
+                { "The SpongeBob Movie: Sponge Out of Water", "PG" },
+                { "Killer Joe", "NC-17" },
+                { "The Lion King", "G" },
+                { "Thor: Ragnarok", "PG-13" },
+                { "WALL-E", "G" },
+                { "Madea's Family Reunion", "PG-13" },
+                { "Finding Nemo", "G" },
+                { "Ace Ventura: Pet Detective", "PG-13" },
+                { "Deadpool", "R" },
+                { "Wonder", "PG" },
+                { "Wonder Woman", "PG-13" },
+                { "Monsters, Inc.", "G" }
+            };
+
+        public static int getIndex(string movieName)
+        {
+            for (int i = 0; i < movies.Length; i++)
+            {
+                if (movies[i, 0] == movieName) { return i; }
+            }
+            return 0;
+        }
 
         public Form1()
         {
@@ -36,7 +65,7 @@ namespace movieLabFormsApp
             {
                 int age = int.Parse(ageDropdown.Text);
                 string usrMovie = listBoxMovies.Text;
-                string usrRating = movies[usrMovie];
+                string usrRating = movies[getIndex(usrMovie), 1];
                 if (usrRating == "R" && age < 17)
                 {
                     MessageBox.Show("You must be accompanied by a parent or guardian to watch this film", "This film is rated R");
@@ -72,7 +101,7 @@ namespace movieLabFormsApp
         {           
             try
             {
-                labelRatingLetter.Text = movies[Convert.ToString(listBoxMovies.SelectedItem)];
+                labelRatingLetter.Text = movies[getIndex(listBoxMovies.SelectedItem.ToString()), 1];
             }
             catch (KeyNotFoundException)
             {
@@ -83,7 +112,7 @@ namespace movieLabFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             ageDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
-            for (int index = 0; index < movies.Count; index++)
+            for (int index = 0; index < movies.Length; index++)
             {
                 listBoxMovies.Items.Add(movies.ElementAt(index).Key);
             }
