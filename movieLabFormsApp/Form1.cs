@@ -7,27 +7,7 @@ namespace movieLabFormsApp
 {
     public partial class Form1 : Form
     {
-        /*
-        IDictionary<string, string> movies = new Dictionary<string, string>
-            {
-                { "IT", "R" },
-                { "Jaws", "PG" },
-                { "The SpongeBob Movie: Sponge Out of Water", "PG" },
-                { "Killer Joe", "NC-17" },
-                { "The Lion King", "G" },
-                { "Thor: Ragnarok", "PG-13" },
-                { "WALL-E", "G" },
-                { "Madea's Family Reunion", "PG-13" },
-                { "Finding Nemo", "G" },
-                { "Ace Ventura: Pet Detective", "PG-13" },
-                { "Deadpool", "R" },
-                { "Wonder", "PG" },
-                { "Wonder Woman", "PG-13" },                
-                { "Monsters, Inc.", "G" }
-            };
-        */
-
-        static string[,] movies =
+        static string[,] movies = 
             {
                 { "IT", "R" },
                 { "Jaws", "PG" },
@@ -114,7 +94,14 @@ namespace movieLabFormsApp
             ageDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
             for (int index = 0; index < movies.Length; index++)
             {
-                listBoxMovies.Items.Add(movies.ElementAt(index).Key);
+                try
+                {
+                    listBoxMovies.Items.Add(movies[index, 0]);
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    continue;
+                }
             }
             for (int i = 1; i < 101; i++)
             {
@@ -140,20 +127,21 @@ namespace movieLabFormsApp
         private void ageDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             int age = int.Parse(ageDropdown.Text);
-            for (int index = 0; index < movies.Count; index++)
+            for (int index = 0; index < movies.Length; index++)
             {
-                string rating = movies.ElementAt(index).Value;
+                string rating = movies[getIndex(listBoxMovies.SelectedItem.ToString()), 1];
+                
                 if (rating is "R")
                 {
                     if (age < 17)
                     {
-                        listBoxMovies.Items.Remove(movies.ElementAt(index).Key);
+                        listBoxMovies.Items.Remove(movies[index,0]);
                     }
                     else
                     {
-                        if (!listBoxMovies.Items.Contains(movies.ElementAt(index).Key))
+                        if (!listBoxMovies.Items.Contains(movies[index, 0]));
                         {
-                            listBoxMovies.Items.Add(movies.ElementAt(index).Key);
+                            listBoxMovies.Items.Add(movies[index, 0]);
                         }
                     }
                 }
@@ -161,13 +149,13 @@ namespace movieLabFormsApp
                 {
                     if (age < 17)
                     {
-                        listBoxMovies.Items.Remove(movies.ElementAt(index).Key);
+                        listBoxMovies.Items.Remove(movies[index, 0]);
                     }
                     else
                     {
-                        if (!listBoxMovies.Items.Contains(movies.ElementAt(index).Key))
+                        if (!listBoxMovies.Items.Contains(movies[index, 0]))
                         {
-                            listBoxMovies.Items.Add(movies.ElementAt(index).Key);
+                            listBoxMovies.Items.Add(movies[index, 0]);
                         }
                     }
                 }
