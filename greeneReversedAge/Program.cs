@@ -15,6 +15,10 @@ using System.Threading.Tasks;
             Write a program that searches for solutions to this problem.
 */
 
+//
+//ANSWER: 79
+//
+
 namespace greeneReversedAge
 {
     class Program
@@ -23,27 +27,31 @@ namespace greeneReversedAge
         {
             char[] ageArray = s.ToCharArray();
             Array.Reverse(ageArray);
-            return new string (ageArray);
+            return new string(ageArray);
         }
 
         static void Main(string[] args)
         {
             string myAge = "0";
-            string momAge = "36";
-            for (int i = 0; i < 1000; i++)
+            string momAge = "18";
+            for (int i = 0; i < 200; i++)
             {
+                if (myAge.Length == 1)
+                {
+                    myAge = 0 + myAge;
+                }
                 if (reverse(myAge) == momAge)
                 {
                     Console.WriteLine($"My age is {myAge} and mom's age is {momAge}");
                 }
+                /*
                 else
                 {
                     Console.WriteLine($"{myAge} and {momAge} don't work");
                 }
-                int momAgeInt = int.Parse(momAge);
-                int myAgeInt = int.Parse(myAge);
-                myAge = (myAgeInt + 1).ToString();
-                momAge = (momAgeInt + 1).ToString();
+                */
+                myAge = (int.Parse(myAge) + 1).ToString();
+                momAge = (int.Parse(momAge) + 1).ToString();
             }
             Console.ReadLine();
         }
