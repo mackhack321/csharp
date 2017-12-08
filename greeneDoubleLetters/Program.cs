@@ -17,10 +17,20 @@ namespace greeneDoubleLetters
 {
     class Program
     {
+        public static char[] wordToChar(string word)
+        {
+            char[] wordCharArray = word.ToCharArray();
+            Console.WriteLine(wordCharArray);
+            return wordCharArray;
+        }
         static void Main(string[] args)
         {
             string[] alphabet = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
             string[] words = System.IO.File.ReadAllLines("C:/Users/mlgpr/Desktop/CSharp/greeneDoubleLetters/dictionary.txt");
+            foreach (string i in words)
+            {
+                wordToChar(i);
+            }
             Console.ReadLine();
         }
     }

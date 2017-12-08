@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greeneDoubleLetters", "greeneDoubleLetters.csproj", "{B5E9612D-88B6-4D73-8B82-A2EAD005B6F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greeneDoubleLetters", "greeneDoubleLetters.csproj", "{4A49F1DC-B5F2-4DD4-9DDA-97C9892F845A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B5E9612D-88B6-4D73-8B82-A2EAD005B6F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5E9612D-88B6-4D73-8B82-A2EAD005B6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5E9612D-88B6-4D73-8B82-A2EAD005B6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5E9612D-88B6-4D73-8B82-A2EAD005B6F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A49F1DC-B5F2-4DD4-9DDA-97C9892F845A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A49F1DC-B5F2-4DD4-9DDA-97C9892F845A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A49F1DC-B5F2-4DD4-9DDA-97C9892F845A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A49F1DC-B5F2-4DD4-9DDA-97C9892F845A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DE437C1C-08B4-4ACA-92EE-90F7A65F050E}
+		SolutionGuid = {B323969E-C93E-40D6-BB7C-CFD0A738A0A9}
 	EndGlobalSection
 EndGlobal
