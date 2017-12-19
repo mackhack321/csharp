@@ -34,14 +34,15 @@
             this.labelLName = new System.Windows.Forms.Label();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.labelPhone = new System.Windows.Forms.Label();
-            this.comboBoxAge = new System.Windows.Forms.ComboBox();
-            this.labelAge = new System.Windows.Forms.Label();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.labelPhone = new System.Windows.Forms.Label();
+            this.comboBoxAge = new System.Windows.Forms.ComboBox();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +102,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(445, 213);
             this.dataGridView1.TabIndex = 5;
             // 
+            // firstName
+            // 
+            this.firstName.HeaderText = "First Name";
+            this.firstName.Name = "firstName";
+            this.firstName.ReadOnly = true;
+            // 
+            // lastName
+            // 
+            this.lastName.HeaderText = "Last Name";
+            this.lastName.Name = "lastName";
+            this.lastName.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Phone";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(370, 37);
@@ -134,35 +159,22 @@
             this.labelAge.TabIndex = 9;
             this.labelAge.Text = "Age";
             // 
-            // firstName
+            // buttonDelete
             // 
-            this.firstName.HeaderText = "First Name";
-            this.firstName.Name = "firstName";
-            this.firstName.ReadOnly = true;
-            // 
-            // lastName
-            // 
-            this.lastName.HeaderText = "Last Name";
-            this.lastName.Name = "lastName";
-            this.lastName.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.HeaderText = "Phone";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
-            // age
-            // 
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            this.age.ReadOnly = true;
+            this.buttonDelete.Location = new System.Drawing.Point(582, 166);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 10;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 417);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.labelAge);
             this.Controls.Add(this.comboBoxAge);
             this.Controls.Add(this.labelPhone);
@@ -197,6 +209,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }
 
