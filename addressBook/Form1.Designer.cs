@@ -43,6 +43,7 @@
             this.comboBoxAge = new System.Windows.Forms.ComboBox();
             this.labelAge = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonNewEntry = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.textBoxFName.Name = "textBoxFName";
             this.textBoxFName.Size = new System.Drawing.Size(100, 20);
             this.textBoxFName.TabIndex = 0;
+            this.textBoxFName.Visible = false;
             // 
             // labelFName
             // 
@@ -61,6 +63,7 @@
             this.labelFName.Size = new System.Drawing.Size(57, 13);
             this.labelFName.TabIndex = 1;
             this.labelFName.Text = "First Name";
+            this.labelFName.Visible = false;
             // 
             // textBoxLName
             // 
@@ -68,6 +71,7 @@
             this.textBoxLName.Name = "textBoxLName";
             this.textBoxLName.Size = new System.Drawing.Size(100, 20);
             this.textBoxLName.TabIndex = 2;
+            this.textBoxLName.Visible = false;
             // 
             // labelLName
             // 
@@ -77,6 +81,7 @@
             this.labelLName.Size = new System.Drawing.Size(58, 13);
             this.labelLName.TabIndex = 3;
             this.labelLName.Text = "Last Name";
+            this.labelLName.Visible = false;
             // 
             // buttonSubmit
             // 
@@ -86,10 +91,13 @@
             this.buttonSubmit.TabIndex = 4;
             this.buttonSubmit.Text = "Add";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Visible = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.firstName,
@@ -132,6 +140,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(100, 20);
             this.textBoxPhone.TabIndex = 6;
+            this.textBoxPhone.Visible = false;
             // 
             // labelPhone
             // 
@@ -141,6 +150,7 @@
             this.labelPhone.Size = new System.Drawing.Size(78, 13);
             this.labelPhone.TabIndex = 7;
             this.labelPhone.Text = "Phone Number";
+            this.labelPhone.Visible = false;
             // 
             // comboBoxAge
             // 
@@ -149,6 +159,7 @@
             this.comboBoxAge.Name = "comboBoxAge";
             this.comboBoxAge.Size = new System.Drawing.Size(48, 21);
             this.comboBoxAge.TabIndex = 8;
+            this.comboBoxAge.Visible = false;
             // 
             // labelAge
             // 
@@ -158,6 +169,7 @@
             this.labelAge.Size = new System.Drawing.Size(26, 13);
             this.labelAge.TabIndex = 9;
             this.labelAge.Text = "Age";
+            this.labelAge.Visible = false;
             // 
             // buttonDelete
             // 
@@ -169,11 +181,22 @@
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // buttonNewEntry
+            // 
+            this.buttonNewEntry.Location = new System.Drawing.Point(300, 62);
+            this.buttonNewEntry.Name = "buttonNewEntry";
+            this.buttonNewEntry.Size = new System.Drawing.Size(75, 23);
+            this.buttonNewEntry.TabIndex = 11;
+            this.buttonNewEntry.Text = "New Entry";
+            this.buttonNewEntry.UseVisualStyleBackColor = true;
+            this.buttonNewEntry.Click += new System.EventHandler(this.buttonNewEntry_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 417);
+            this.Controls.Add(this.buttonNewEntry);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.labelAge);
             this.Controls.Add(this.comboBoxAge);
@@ -186,7 +209,7 @@
             this.Controls.Add(this.labelFName);
             this.Controls.Add(this.textBoxFName);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Address Book";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,6 +233,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonNewEntry;
     }
 }
 

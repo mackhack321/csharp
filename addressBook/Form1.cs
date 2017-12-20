@@ -34,11 +34,21 @@ namespace addressBook
         {
             InitializeComponent();
             //this fills the age dropdown with numbers 1-100
-            for (int i = 0; i < 101; i++) { comboBoxAge.Items.Add(i); } 
+            for (int i = 0; i < 101; i++) { comboBoxAge.Items.Add(i); }
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            //makes list of controls to be hidden
+            List<Control> entryControls = new List<Control>
+            {
+                labelAge,labelFName,labelLName,labelPhone,textBoxFName,textBoxLName,textBoxPhone,comboBoxAge,buttonSubmit
+            };
+            //iterates through controls list and hides each one
+            foreach(Control item in entryControls) { item.Visible = false; }
+            //shows new entry button
+            buttonNewEntry.Visible = true;
+
             if (textBoxFName.Text is "" || textBoxLName.Text is "" || textBoxPhone.Text is "" || comboBoxAge.Text is "")
             {
                 //if any field is empty, show an error box
@@ -71,7 +81,6 @@ namespace addressBook
                     }
                 }
             }
-            debug();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -98,9 +107,19 @@ namespace addressBook
             }           
             //throw error box if no row is selected
             catch (ArgumentOutOfRangeException){ MessageBox.Show("Please select a row", "Error"); }
-            //throw error box if selected row is the bottom new row
-            catch (InvalidOperationException) { MessageBox.Show("Cannot delete new row", "Error"); }
-            debug();
+        }
+
+        private void buttonNewEntry_Click(object sender, EventArgs e)
+        {
+            //makes list of controls to be made visible
+            List<Control> entryControls = new List<Control>
+            {
+                labelAge,labelFName,labelLName,labelPhone,textBoxFName,textBoxLName,textBoxPhone,comboBoxAge,buttonSubmit
+            };
+            //hides new entry button
+            buttonNewEntry.Visible = false;
+            //iterates through list and makes each control visible
+            foreach (Control item in entryControls) { item.Visible = true; }
         }
     }
 }
