@@ -14,6 +14,7 @@ namespace calculator
     {
         List<string> boxInfo = new List<string> { };
         List<string> numOne = new List<string> { };
+        List<string> numTwo = new List<string> { };
         public string operation;
         
         public Form1()
@@ -32,16 +33,69 @@ namespace calculator
         private void button9_Click(object sender, EventArgs e) { boxInfo.Add("9"); textBoxNums.Text = String.Join("", boxInfo); }
         private void button0_Click(object sender, EventArgs e) { boxInfo.Add("0"); textBoxNums.Text = String.Join("", boxInfo); }
        
-        private void buttonClear_Click(object sender, EventArgs e) { textBoxNums.Clear(); boxInfo.Clear(); }
+        private void buttonClear_Click(object sender, EventArgs e) { textBoxNums.Clear(); boxInfo.Clear(); numOne.Clear(); numTwo.Clear(); }
 
-        private void buttonMultiply_Click(object sender, EventArgs e) { operation = "X"; }
-        private void buttonDivide_Click(object sender, EventArgs e) { operation = "/"; }
-        private void buttonAdd_Click(object sender, EventArgs e) { operation = "+"; }
-        private void buttonSubtract_Click(object sender, EventArgs e){ operation = "-"; }
+        private void buttonMultiply_Click(object sender, EventArgs e)
+        {
+            operation = "x";
+            foreach (string item in boxInfo)
+            {
+                numOne.Add(item);
+            }
+            textBoxNums.Clear(); boxInfo.Clear();
+        }
+        private void buttonDivide_Click(object sender, EventArgs e)
+        {
+            operation = "/";
+            foreach (string item in boxInfo)
+            {
+                numOne.Add(item);
+            }
+            textBoxNums.Clear(); boxInfo.Clear();
+        }
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            operation = "+";
+            foreach (string item in boxInfo)
+            {
+                numOne.Add(item);
+            }
+            textBoxNums.Clear(); boxInfo.Clear();
+        }
+        private void buttonSubtract_Click(object sender, EventArgs e)
+        {
+            operation = "-";
+            foreach (string item in boxInfo)
+            {
+                numOne.Add(item);
+            }
+            textBoxNums.Clear(); boxInfo.Clear();
+        }
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            
+            foreach (string item in boxInfo)
+            {
+                numTwo.Add(item);
+            }
+            float numOneInt = float.Parse(string.Join("", numOne));
+            float numTwoInt = float.Parse(string.Join("", numTwo));
+            if (operation == "+")
+            {
+                textBoxNums.Text = (numOneInt + numTwoInt).ToString();
+            }
+            if (operation == "-")
+            {
+                textBoxNums.Text = (numOneInt - numTwoInt).ToString();
+            }
+            if (operation == "*")
+            {
+                textBoxNums.Text = (numOneInt * numTwoInt).ToString();
+            }
+            if (operation == "/")
+            {
+                textBoxNums.Text = (numOneInt / numTwoInt).ToString();
+            }
         }
     }
 }
