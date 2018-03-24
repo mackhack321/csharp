@@ -23,10 +23,14 @@ namespace Add
             // Release any cached data, images, etc that aren't in use.
         }
 
-        partial void submitClick(submitButton sender)
+        partial void submitClick(UIButton sender)
         {
             //throw new NotImplementedException();
-            string numOne = tb1.Text
+            int numOne = int.Parse(numOneTextBox.Text);
+            int numTwo = int.Parse(numOneTextBox.Text);
+            int result = numOne + numTwo;
+            resultLabel.Text = result.ToString();
+            resultLabel.Hidden = false;
         }
     }
 }

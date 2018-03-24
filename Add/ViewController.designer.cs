@@ -21,9 +21,17 @@ namespace Add
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField numTwoTextBox { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel resultLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton submitButton { get; set; }
+
         [Action ("submitClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void submitClick (Add.submitButton sender);
+        partial void submitClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -35,6 +43,16 @@ namespace Add
             if (numTwoTextBox != null) {
                 numTwoTextBox.Dispose ();
                 numTwoTextBox = null;
+            }
+
+            if (resultLabel != null) {
+                resultLabel.Dispose ();
+                resultLabel = null;
+            }
+
+            if (submitButton != null) {
+                submitButton.Dispose ();
+                submitButton = null;
             }
         }
     }

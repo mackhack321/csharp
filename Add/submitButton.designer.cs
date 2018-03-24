@@ -14,5 +14,8 @@ namespace Add
     [Register ("submitButton")]
     partial class submitButton
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

@@ -14,5 +14,8 @@ namespace Add
     [Register ("answerLabel")]
     partial class answerLabel
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
