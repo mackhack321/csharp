@@ -27,10 +27,17 @@ namespace Add
         {
             //throw new NotImplementedException();
             int numOne = int.Parse(numOneTextBox.Text);
-            int numTwo = int.Parse(numOneTextBox.Text);
+            int numTwo = int.Parse(numTwoTextBox.Text);
             int result = numOne + numTwo;
             resultLabel.Text = result.ToString();
             resultLabel.Hidden = false;
+
+            UIAlertView alert = new UIAlertView()
+            {
+                Title = "Result",
+                Message = $"{numOne.ToString()}+{numTwo.ToString()}={result.ToString()}"
+            };
+            alert.AddButton("OK"); alert.Show();
         }
     }
 }

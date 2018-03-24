@@ -1,4 +1,4 @@
-// WARNING
+﻿// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -29,6 +29,10 @@ namespace Add
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton submitButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel titleLabel { get; set; }
+
         [Action ("submitClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void submitClick (UIKit.UIButton sender);
@@ -53,6 +57,11 @@ namespace Add
             if (submitButton != null) {
                 submitButton.Dispose ();
                 submitButton = null;
+            }
+
+            if (titleLabel != null) {
+                titleLabel.Dispose ();
+                titleLabel = null;
             }
         }
     }

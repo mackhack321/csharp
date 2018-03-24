@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -107,22 +107,6 @@
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="numOneTextBox.cs" />
-    <Compile Include="numOneTextBox.designer.cs">
-      <DependentUpon>numOneTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="numTwoTextBox.cs" />
-    <Compile Include="numTwoTextBox.designer.cs">
-      <DependentUpon>numTwoTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="submitButton.cs" />
-    <Compile Include="submitButton.designer.cs">
-      <DependentUpon>submitButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="answerLabel.cs" />
-    <Compile Include="answerLabel.designer.cs">
-      <DependentUpon>answerLabel.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
