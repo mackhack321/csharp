@@ -60,9 +60,8 @@
             this.buttonTopLt.Name = "buttonTopLt";
             this.buttonTopLt.Size = new System.Drawing.Size(94, 82);
             this.buttonTopLt.TabIndex = 1;
-            this.buttonTopLt.Text = "Z";
             this.buttonTopLt.UseVisualStyleBackColor = true;
-            this.buttonTopLt.Click += new System.EventHandler(this.buttonTopLt_Click);
+            this.buttonTopLt.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonTopMid
             // 
@@ -71,20 +70,18 @@
             this.buttonTopMid.Name = "buttonTopMid";
             this.buttonTopMid.Size = new System.Drawing.Size(94, 82);
             this.buttonTopMid.TabIndex = 2;
-            this.buttonTopMid.Text = "Z";
             this.buttonTopMid.UseVisualStyleBackColor = true;
-            this.buttonTopMid.Click += new System.EventHandler(this.buttonTopMid_Click);
+            this.buttonTopMid.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonTopRt
             // 
             this.buttonTopRt.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTopRt.Location = new System.Drawing.Point(456, 112);
+            this.buttonTopRt.Location = new System.Drawing.Point(447, 112);
             this.buttonTopRt.Name = "buttonTopRt";
             this.buttonTopRt.Size = new System.Drawing.Size(94, 82);
             this.buttonTopRt.TabIndex = 3;
-            this.buttonTopRt.Text = "Z";
             this.buttonTopRt.UseVisualStyleBackColor = true;
-            this.buttonTopRt.Click += new System.EventHandler(this.buttonTopRt_Click);
+            this.buttonTopRt.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonMidLt
             // 
@@ -93,9 +90,8 @@
             this.buttonMidLt.Name = "buttonMidLt";
             this.buttonMidLt.Size = new System.Drawing.Size(94, 82);
             this.buttonMidLt.TabIndex = 4;
-            this.buttonMidLt.Text = "Z";
             this.buttonMidLt.UseVisualStyleBackColor = true;
-            this.buttonMidLt.Click += new System.EventHandler(this.buttonMidLt_Click);
+            this.buttonMidLt.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonMidMid
             // 
@@ -104,53 +100,48 @@
             this.buttonMidMid.Name = "buttonMidMid";
             this.buttonMidMid.Size = new System.Drawing.Size(94, 82);
             this.buttonMidMid.TabIndex = 5;
-            this.buttonMidMid.Text = "Z";
             this.buttonMidMid.UseVisualStyleBackColor = true;
-            this.buttonMidMid.Click += new System.EventHandler(this.buttonMidMid_Click);
+            this.buttonMidMid.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonMidRt
             // 
             this.buttonMidRt.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMidRt.Location = new System.Drawing.Point(456, 211);
+            this.buttonMidRt.Location = new System.Drawing.Point(447, 211);
             this.buttonMidRt.Name = "buttonMidRt";
             this.buttonMidRt.Size = new System.Drawing.Size(94, 82);
             this.buttonMidRt.TabIndex = 6;
-            this.buttonMidRt.Text = "Z";
             this.buttonMidRt.UseVisualStyleBackColor = true;
-            this.buttonMidRt.Click += new System.EventHandler(this.buttonMidRt_Click);
+            this.buttonMidRt.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonBotLt
             // 
             this.buttonBotLt.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBotLt.Location = new System.Drawing.Point(224, 320);
+            this.buttonBotLt.Location = new System.Drawing.Point(224, 315);
             this.buttonBotLt.Name = "buttonBotLt";
             this.buttonBotLt.Size = new System.Drawing.Size(94, 82);
             this.buttonBotLt.TabIndex = 7;
-            this.buttonBotLt.Text = "Z";
             this.buttonBotLt.UseVisualStyleBackColor = true;
-            this.buttonBotLt.Click += new System.EventHandler(this.buttonBotLt_Click);
+            this.buttonBotLt.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonBotMid
             // 
             this.buttonBotMid.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBotMid.Location = new System.Drawing.Point(335, 320);
+            this.buttonBotMid.Location = new System.Drawing.Point(335, 315);
             this.buttonBotMid.Name = "buttonBotMid";
             this.buttonBotMid.Size = new System.Drawing.Size(94, 82);
             this.buttonBotMid.TabIndex = 8;
-            this.buttonBotMid.Text = "Z";
             this.buttonBotMid.UseVisualStyleBackColor = true;
-            this.buttonBotMid.Click += new System.EventHandler(this.buttonBotMid_Click);
+            this.buttonBotMid.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonBotRt
             // 
             this.buttonBotRt.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBotRt.Location = new System.Drawing.Point(456, 320);
+            this.buttonBotRt.Location = new System.Drawing.Point(447, 315);
             this.buttonBotRt.Name = "buttonBotRt";
             this.buttonBotRt.Size = new System.Drawing.Size(94, 82);
             this.buttonBotRt.TabIndex = 9;
-            this.buttonBotRt.Text = "Z";
             this.buttonBotRt.UseVisualStyleBackColor = true;
-            this.buttonBotRt.Click += new System.EventHandler(this.buttonBotRt_Click);
+            this.buttonBotRt.Click += new System.EventHandler(this.buttonAnyClick);
             // 
             // buttonReset
             // 
