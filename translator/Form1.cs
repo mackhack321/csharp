@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Cloud.Translation.V2;
 
 namespace translator
 {
     public partial class Form1 : Form
     {
         public IDictionary<string, string> languageCodes = new Dictionary<string, string>();
+        TranslationClient translator = TranslationClient.Create();
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +32,8 @@ namespace translator
         private void buttonTranslate_Click(object sender, EventArgs e)
         {
             textBoxOutput.Enabled = true;
-            textBoxOutput.Text = $"Sample Text in {languageCodes[comboBoxOutput.Text]}";
+            string translated = translator.TranslateText($"{textBoxInput.Text}",$"{languageCodes[comboBoxOutput.Text]}").ToString();
+            textBoxOutput.Text = translated;
         }
     }
 }
