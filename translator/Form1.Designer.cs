@@ -60,7 +60,7 @@
             this.buttonTranslate.TabIndex = 2;
             this.buttonTranslate.Text = "Translate";
             this.buttonTranslate.UseVisualStyleBackColor = true;
-            this.buttonTranslate.Click += new System.EventHandler(this.buttonTranslate_Click);
+            this.buttonTranslate.Click += new System.EventHandler(this.buttonTranslate_ClickAsync);
             // 
             // textBoxOutput
             // 

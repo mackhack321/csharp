@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Google.Cloud.Translation.V2;
+using YandexTranslateCSharpSdk;
 
 namespace translator
 {
@@ -20,23 +20,27 @@ namespace translator
             InitializeComponent();
             comboBoxInput.DropDownStyle = ComboBoxStyle.DropDownList; // so user cannot type their own input
             comboBoxOutput.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxInput.Items.Add("English");
-            comboBoxInput.Items.Add("Spanish");
-            comboBoxOutput.Items.Add("English");
-            comboBoxOutput.Items.Add("Spanish");
             languageCodes.Add("English", "en");
             languageCodes.Add("Spanish", "es");
+            foreach (string key in languageCodes.Keys) // populate dropdowns
+            {
+                comboBoxInput.Items.Add(key);
+                comboBoxOutput.Items.Add(key);
+            }
         }
 
-        private void buttonTranslate_Click(object sender, EventArgs e)
+        private async void buttonTranslate_ClickAsync(object sender, EventArgs e)
         {
             textBoxOutput.Enabled = true;
-            textBoxOutput.Text = reverse(textBoxInput.Text);
+            await translate(textBoxInput.Text, $"{languageCodes[comboBoxInput.Text]}-{languageCodes[comboBoxOutput.Text]}");
         }
 
-        private string reverse(string input)
+        public async Task translate(string text, string lang)
         {
-            return string.Join("", input.ToCharArray().Reverse());
+            YandexTranslateSdk wrapper = new YandexTranslateSdk
+            { ApiKey = "trnsl.1.1.20180425T020912Z.749ad2de84bbafee.4ad82b8ab6d6f4b37d3d3b49b966ef528e7f73a0" };
+            string translated = await wrapper.TranslateText(textBoxInput.Text, lang);
+            textBoxOutput.Text = translated;
         }
     }
 }
