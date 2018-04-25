@@ -14,7 +14,6 @@ namespace translator
     public partial class Form1 : Form
     {
         public IDictionary<string, string> languageCodes = new Dictionary<string, string>();
-        TranslationClient translator = TranslationClient.Create();
 
         public Form1()
         {
@@ -32,8 +31,12 @@ namespace translator
         private void buttonTranslate_Click(object sender, EventArgs e)
         {
             textBoxOutput.Enabled = true;
-            string translated = translator.TranslateText($"{textBoxInput.Text}",$"{languageCodes[comboBoxOutput.Text]}").ToString();
-            textBoxOutput.Text = translated;
+            textBoxOutput.Text = reverse(textBoxInput.Text);
+        }
+
+        private string reverse(string input)
+        {
+            return string.Join("", input.ToCharArray().Reverse());
         }
     }
 }
